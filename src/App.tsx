@@ -19,6 +19,71 @@ import SchoolTraining from "./pages/Academy/SchoolTraining";
 
 const queryClient = new QueryClient();
 
+function Footer() {
+  return (
+    <footer className="bg-gray-900 text-gray-300 py-10">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4">Abidh Academy</h4>
+            <ul className="space-y-2">
+              <li><a href="/academy/technical-training" className="hover:text-white transition">IT Trainings</a></li>
+              <li><a href="/academy/digital-marketing" className="hover:text-white transition">Digital Marketing</a></li>
+              <li><a href="/academy/featured-courses" className="hover:text-white transition">Featured Courses</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4">Abidh Creative</h4>
+            <ul className="space-y-2">
+              <li><a href="/creative/it-development" className="hover:text-white transition">IT & Development</a></li>
+              <li><a href="/creative/digital-marketing" className="hover:text-white transition">Digital Marketing</a></li>
+              <li><a href="/creative/creative-solutions" className="hover:text-white transition">Creative Solutions</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4">Follow Us</h4>
+            <ul className="flex space-x-4">
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4">Contact Us</h4>
+            <p className="text-sm">Nardevi, Kathmandu</p>
+            <p className="text-sm">Phone: 9801110981 / 9841080407</p>
+            <p className="text-sm">Email: info@abidhgroup.com</p>
+          </div>
+        </div>
+        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
+          <p className="text-sm">&copy; 2025 Abidh Group. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -37,6 +102,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <RouteWrapper />
+        <Footer /> {/* Add Footer component */}
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -48,6 +48,15 @@ const Footer = () => {
               <Link to="/academy/corporate-training" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Corporate Training
               </Link>
+              <Link to="/academy/it-training" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                IT Training
+              </Link>
+              <Link to="/academy/digital-marketing" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Digital Marketing
+              </Link>
+              <Link to="/academy/featured-courses" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                Featured Courses
+              </Link>
             </div>
           </div>
 
