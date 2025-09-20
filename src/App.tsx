@@ -16,8 +16,14 @@ import NotFound from "./pages/NotFound";
 import CollegeTraining from "./pages/Academy/CollegeTraining";
 import CorporateTraining from "./pages/Academy/CorporateTraining";
 import SchoolTraining from "./pages/Academy/SchoolTraining";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faFacebookF, faInstagram, faTwitter, faLinkedinIn, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const queryClient = new QueryClient();
+
+// Add icons to the library
+library.add(faFacebookF, faInstagram, faTwitter, faLinkedinIn, faTiktok);
 
 function Footer() {
   return (
@@ -42,30 +48,30 @@ function Footer() {
           </div>
           <div>
             <h4 className="text-white font-bold text-lg mb-4">Follow Us</h4>
-            <ul className="flex space-x-4">
+            <ul className="flex flex-col space-y-4">
               <li>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  <i className="fab fa-facebook-f"></i>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-2">
+                  <i className="fab fa-facebook-f text-2xl"></i> Facebook
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  <i className="fab fa-twitter"></i>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-2">
+                  <i className="fab fa-instagram text-2xl"></i> Instagram
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  <i className="fab fa-linkedin-in"></i>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-2">
+                  <i className="fab fa-twitter text-2xl"></i> Twitter
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  <i className="fab fa-instagram"></i>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-2">
+                  <i className="fab fa-linkedin-in text-2xl"></i> LinkedIn
                 </a>
               </li>
               <li>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-                  <i className="fab fa-youtube"></i>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition flex items-center gap-2">
+                  <i className="fab fa-tiktok text-2xl"></i> TikTok
                 </a>
               </li>
             </ul>
