@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Globe, Code, Palette, Search, Smartphone, BarChart, ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import creativeImage from "@/assets/creative-image.jpg";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 const Creative = () => {
   const services = [
@@ -62,39 +64,50 @@ const Creative = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Abhidh Creative | Digital Marketing, IT & Design Solutions</title>
+        <meta name="description" content="Transform your business with cutting-edge digital marketing, development, and creative solutions designed to accelerate growth and maximize ROI." />
+      </Helmet>
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 relative overflow-hidden">
+          <motion.div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{ backgroundImage: `url(${creativeImage})` }}
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+          />
           <div className="container relative">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-white">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
+              <motion.div className="text-white" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6 drop-shadow-xl">
                   Abhidh Creative
                 </h1>
                 <p className="text-xl text-white/90 mb-8">
                   Transform your business with cutting-edge digital marketing, development, and creative solutions designed to accelerate growth and maximize ROI.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" variant="secondary">
+                  <Button asChild size="lg" variant="secondary" className="shadow-xl hover:scale-105 transition-transform duration-200">
                     <Link to="/contact" className="flex items-center gap-2">
                       <Globe className="h-5 w-5" />
                       Get Free Consultation
                       <ArrowRight className="h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                  <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 shadow-xl hover:scale-105 transition-transform duration-200">
                     <Link to="/contact">View Portfolio</Link>
                   </Button>
                 </div>
-              </div>
-              <div className="relative">
+              </motion.div>
+              <motion.div className="relative" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
                 <img 
                   src={creativeImage} 
                   alt="Digital marketing and development services at Abhidh Creative"
                   className="rounded-lg shadow-2xl"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>

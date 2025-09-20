@@ -39,13 +39,13 @@ const Footer = () => {
               <Link to="/academy" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Overview
               </Link>
-              <Link to="/academy/soft-skills" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/academy/school-training" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Soft Skills Training
               </Link>
-              <Link to="/academy/technical" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/academy/technical-training" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Technical Training
               </Link>
-              <Link to="/academy/corporate" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/academy/corporate-training" className="block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Corporate Training
               </Link>
             </div>
@@ -95,15 +95,15 @@ const Footer = () => {
             © 2024 ABHIDH Group. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="https://www.linkedin.com/company/abidhgroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
               <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="https://twitter.com/abidhgroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
               <Twitter className="h-5 w-5" />
-            </Link>
-            <Link to="#" className="text-muted-foreground hover:text-primary transition-colors">
+            </a>
+            <a href="https://facebook.com/abidhgroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
               <Facebook className="h-5 w-5" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 const Blog = () => {
   const featuredPost = {
@@ -80,20 +82,29 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Blog & Insights | ABHIDH Group</title>
+        <meta name="description" content="Stay updated with the latest trends in education, technology, and business growth through our expert insights and practical guides." />
+      </Helmet>
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-hero">
-          <div className="container">
+        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+          <motion.div
+            className="container"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="text-center text-white">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6 drop-shadow-xl">
                 Blog & Insights
               </h1>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
                 Stay updated with the latest trends in education, technology, and business growth through our expert insights and practical guides.
               </p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Featured Post */}

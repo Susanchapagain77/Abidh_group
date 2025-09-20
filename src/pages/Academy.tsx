@@ -1,5 +1,6 @@
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/layout/Footer";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +8,7 @@ import { Users, Clock, Award, BookOpen, Code, Briefcase, ArrowRight } from "luci
 import { Link } from "react-router-dom";
 import academyImage from "@/assets/academy-image.jpg";
 import academyLogo from "@/assets/abhidh-academy-logo.png";
+import { motion } from "framer-motion";
 
 const Academy = () => {
   const programs = [
@@ -48,6 +50,36 @@ const Academy = () => {
         { name: "Customer Service Excellence", duration: "4 hours", level: "All Levels", description: "Deliver exceptional customer experiences" }
       ],
       color: "bg-orange-500"
+    },
+    {
+      category: "IT Training Programs",
+      icon: BookOpen,
+      description: "Cutting-edge IT courses to boost your digital skills and career prospects.",
+      link: "/academy/it-training",
+      courses: [
+        { name: "Full Stack Web Development", duration: "12 weeks", level: "Beginner-Advanced", description: "Master HTML, CSS, JavaScript, React, Node.js, and databases." , featured: true },
+        { name: "Python for Data Science", duration: "8 weeks", level: "All Levels", description: "Analyze data, build models, and visualize insights with Python." },
+        { name: "Cloud Computing with AWS", duration: "6 weeks", level: "Intermediate", description: "Deploy, manage, and scale applications on AWS." , featured: true },
+        { name: "Cybersecurity Essentials", duration: "6 weeks", level: "All Levels", description: "Protect systems and data with hands-on security training." },
+        { name: "AI & Machine Learning", duration: "10 weeks", level: "Intermediate-Advanced", description: "Build and deploy intelligent systems using ML algorithms." , featured: true },
+        { name: "DevOps & CI/CD", duration: "5 weeks", level: "Intermediate", description: "Automate, test, and deploy software efficiently with DevOps tools." }
+      ],
+      color: "bg-purple-600"
+    },
+    {
+      category: "Digital Marketing Training Programs",
+      icon: Award,
+      description: "Master the latest digital marketing skills to grow your brand and career.",
+      link: "/academy/digital-marketing-training",
+      courses: [
+        { name: "SEO Mastery", duration: "6 weeks", level: "All Levels", description: "Boost website rankings and organic traffic with advanced SEO techniques.", featured: true },
+        { name: "Social Media Marketing", duration: "5 weeks", level: "Beginner-Intermediate", description: "Grow your audience and engagement on all major social platforms." },
+        { name: "Google Ads & PPC", duration: "4 weeks", level: "Intermediate", description: "Create, manage, and optimize paid ad campaigns for maximum ROI.", featured: true },
+        { name: "Content Marketing", duration: "6 weeks", level: "All Levels", description: "Develop compelling content strategies that drive results." },
+        { name: "Email Marketing Automation", duration: "3 weeks", level: "All Levels", description: "Automate and personalize email campaigns for higher conversions." },
+        { name: "Analytics & Conversion Optimization", duration: "4 weeks", level: "Intermediate-Advanced", description: "Analyze data and optimize funnels to maximize conversions.", featured: true }
+      ],
+      color: "bg-pink-500"
     }
   ];
 
@@ -97,6 +129,61 @@ const Academy = () => {
           </div>
         </section>
 
+
+        {/* Featured Courses Section */}
+        <section className="py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 relative overflow-hidden">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 bg-clip-text text-transparent">
+                Featured Courses
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Explore our most popular and impactful courses, handpicked for your success.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {programs.flatMap((program) =>
+                program.courses
+                  .filter((course) => course.featured)
+                  .map((course, idx) => {
+                    const slug = `${program.link}/${course.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+                    return (
+                      <Link to={slug} key={slug} className="block group">
+                        <motion.div
+                          className="relative p-8 bg-white/90 rounded-2xl border-0 shadow-2xl hover:shadow-3xl hover:scale-[1.03] transition-all duration-300 flex flex-col gap-3 cursor-pointer ring-2 ring-primary/80 ring-offset-2 ring-offset-white bg-gradient-to-br from-white via-purple-50 to-blue-50"
+                          whileHover={{ scale: 1.05, boxShadow: "0 12px 40px 0 rgba(80,0,200,0.10)" }}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                          viewport={{ once: true }}
+                        >
+                          <span className="absolute top-3 right-3 bg-gradient-to-r from-purple-500 to-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
+                            Featured
+                          </span>
+                          <h4 className="font-bold text-xl mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">
+                            {course.name}
+                          </h4>
+                          <p className="text-base text-muted-foreground mb-2 min-h-[48px]">{course.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
+                              {course.duration}
+                            </Badge>
+                            <Badge variant="outline" className="text-xs px-2 py-1 rounded-full">
+                              {course.level}
+                            </Badge>
+                          </div>
+                          <Button size="sm" variant="secondary" className="w-full font-bold shadow-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200" tabIndex={-1}>
+                            Learn More
+                          </Button>
+                        </motion.div>
+                      </Link>
+                    );
+                  })
+              )}
+            </div>
+          </div>
+        </section>
+
         {/* Overview */}
         <section className="py-24">
           <div className="container">
@@ -108,7 +195,6 @@ const Academy = () => {
                 Our academy combines theoretical knowledge with hands-on practice, ensuring you develop skills that are immediately applicable in real-world scenarios.
               </p>
             </div>
-            
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               {[
                 {
@@ -140,63 +226,103 @@ const Academy = () => {
         </section>
 
         {/* Training Categories */}
+
         <section className="py-24 bg-muted/30">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-blue-500 via-green-400 to-orange-400 bg-clip-text text-transparent">
                 Our Training Programs
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Comprehensive programs designed to meet diverse learning needs and career objectives
               </p>
             </div>
-            
-            <div className="space-y-12">
+            <div className="space-y-16">
               {programs.map((program, index) => (
-                <Card key={index} className="bg-gradient-card shadow-elegant border-0">
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      <div className={`p-3 rounded-lg ${program.color}`}>
-                        <program.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-2xl">{program.category}</CardTitle>
-                        <CardDescription className="text-base mt-2">
-                          {program.description}
-                        </CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      {program.courses.map((course, courseIndex) => (
-                        <div key={courseIndex} className="p-6 bg-background rounded-lg border hover:shadow-md transition-shadow">
-                          <h4 className="font-semibold mb-2">{course.name}</h4>
-                          <p className="text-sm text-muted-foreground mb-3">{course.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <Badge variant="secondary" className="text-xs">
-                              {course.duration}
-                            </Badge>
-                            <Badge variant="outline" className="text-xs">
-                              {course.level}
-                            </Badge>
-                          </div>
-                          <Button size="sm" variant="outline" className="w-full">
-                            Learn More
-                          </Button>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Card className="relative overflow-hidden border-0 shadow-2xl group bg-white/90 hover:scale-[1.02] transition-transform duration-300">
+                    <motion.div
+                      className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-20 blur-2xl z-0"
+                      style={{ background: `radial-gradient(circle, ${program.color.replace('bg-', '')}, transparent 70%)` }}
+                      initial={{ scale: 0.7, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 1.2, delay: 0.2 }}
+                    />
+                    <CardHeader className="relative z-10">
+                      <div className="flex items-center gap-4">
+                        <motion.div
+                          className={`p-3 rounded-lg shadow-lg ${program.color} flex items-center justify-center`}
+                          whileHover={{ scale: 1.1, rotate: 6 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <program.icon className="h-8 w-8 text-white" />
+                        </motion.div>
+                        <div>
+                          <CardTitle className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                            {program.category}
+                          </CardTitle>
+                          <CardDescription className="text-base mt-2">
+                            {program.description}
+                          </CardDescription>
                         </div>
-                      ))}
-                    </div>
-                    <div className="text-center">
-                      <Button asChild variant="default">
-                        <Link to={program.link}>
-                          View All {program.category}
-                          <ArrowRight className="h-4 w-4 ml-2" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="relative z-10">
+                      <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        {program.courses.map((course, courseIndex) => {
+                          // Generate a slug for the course info page
+                          const slug = `${program.link}/${course.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
+                          const isFeatured = course.featured;
+                          return (
+                            <Link to={slug} key={courseIndex} className="block group">
+                              <motion.div
+                                className={`relative p-6 bg-white/80 rounded-xl border border-muted shadow-md hover:shadow-xl hover:bg-white/100 transition-all duration-300 flex flex-col gap-2 group cursor-pointer ${isFeatured ? 'ring-2 ring-primary/80 ring-offset-2 ring-offset-white scale-[1.03] bg-gradient-to-br from-purple-50 to-white' : ''}`}
+                                whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)" }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: courseIndex * 0.1 }}
+                                viewport={{ once: true }}
+                              >
+                                {isFeatured && (
+                                  <span className="absolute top-3 right-3 bg-gradient-to-r from-purple-500 to-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
+                                    Featured
+                                  </span>
+                                )}
+                                <h4 className="font-semibold text-lg mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">{course.name}</h4>
+                                <p className="text-sm text-muted-foreground mb-2">{course.description}</p>
+                                <div className="flex flex-wrap gap-2 mb-3">
+                                  <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
+                                    {course.duration}
+                                  </Badge>
+                                  <Badge variant="outline" className="text-xs px-2 py-1 rounded-full">
+                                    {course.level}
+                                  </Badge>
+                                </div>
+                                <Button size="sm" variant={isFeatured ? "secondary" : "outline"} className={`w-full group-hover:bg-primary group-hover:text-white transition-colors duration-200 ${isFeatured ? 'font-bold shadow-lg' : ''}`} tabIndex={-1}>
+                                  Learn More
+                                </Button>
+                              </motion.div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                      <div className="text-center">
+                        <Button asChild variant="default" className="shadow-lg group-hover:scale-105 transition-transform duration-200">
+                          <Link to={program.link}>
+                            View All {program.category}
+                            <ArrowRight className="h-4 w-4 ml-2" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               ))}
             </div>
           </div>

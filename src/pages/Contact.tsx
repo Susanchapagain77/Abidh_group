@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,20 +33,29 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact Us | ABHIDH Group</title>
+        <meta name="description" content="Ready to start your journey with ABHIDH Group? Get in touch with us today and let's discuss how we can help you achieve your goals." />
+      </Helmet>
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-hero">
-          <div className="container">
+        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+          <motion.div
+            className="container"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="text-center text-white">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-6 drop-shadow-xl">
                 Contact Us
               </h1>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
                 Ready to start your journey with ABHIDH Group? Get in touch with us today and let's discuss how we can help you achieve your goals.
               </p>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Contact Form and Info */}
