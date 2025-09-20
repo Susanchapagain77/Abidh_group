@@ -10,6 +10,9 @@ import Creative from "./pages/Creative";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
+import CollegeTraining from "./pages/Academy/CollegeTraining";
+import CorporateTraining from "./pages/Academy/CorporateTraining";
+import SchoolTraining from "./pages/Academy/SchoolTraining";
 
 const queryClient = new QueryClient();
 

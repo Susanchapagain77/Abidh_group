@@ -6,42 +6,46 @@ import { Badge } from "@/components/ui/badge";
 import { Users, Clock, Award, BookOpen, Code, Briefcase, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import academyImage from "@/assets/academy-image.jpg";
+import academyLogo from "@/assets/abhidh-academy-logo.png";
 
 const Academy = () => {
   const programs = [
     {
-      category: "Soft Skills Training",
+      category: "School Training Programs",
       icon: Users,
-      description: "Essential interpersonal and professional skills for career success",
+      description: "Age-appropriate training for students to develop curiosity, creativity, and essential life skills",
+      link: "/academy/school-training",
       courses: [
-        { name: "Communication Excellence", duration: "4 weeks", level: "All Levels" },
-        { name: "Leadership Development", duration: "6 weeks", level: "Intermediate" },
-        { name: "Time Management & Productivity", duration: "3 weeks", level: "Beginner" },
-        { name: "Team Collaboration", duration: "4 weeks", level: "All Levels" }
+        { name: "How to Ask Questions", duration: "6 hours", level: "Grade 5-7", description: "Developing curiosity and communication skills through questioning techniques" },
+        { name: "Creative Thinking & Innovation", duration: "8 hours", level: "Grade 6-8", description: "Foster creative thinking and problem-solving abilities" },
+        { name: "Study Skills & Time Management", duration: "8 hours", level: "Grade 7-9", description: "Effective study habits and academic organization" },
+        { name: "Presentation & Communication", duration: "6 hours", level: "Grade 8-10", description: "Build confidence in public speaking and presentation skills" }
+      ],
+      color: "bg-green-500"
+    },
+    {
+      category: "College Training Programs", 
+      icon: Code,
+      description: "Comprehensive soft skills training designed for college students to enhance employability",
+      link: "/academy/college-training",
+      courses: [
+        { name: "Communication Skills", duration: "10 hours", level: "All Levels", description: "Master verbal, nonverbal, and written communication techniques" },
+        { name: "Team Work & Collaboration", duration: "8 hours", level: "All Levels", description: "Develop effective teamwork and collaborative problem-solving skills" },
+        { name: "Presentation Skills", duration: "6 hours", level: "All Levels", description: "Build confidence in delivering impactful presentations" },
+        { name: "Leadership Fundamentals", duration: "8 hours", level: "Intermediate", description: "Essential leadership skills for future career success" }
       ],
       color: "bg-blue-500"
     },
     {
-      category: "Technical & Career Training",
-      icon: Code,
-      description: "Industry-relevant technical skills and career advancement strategies",
-      courses: [
-        { name: "Web Development Bootcamp", duration: "12 weeks", level: "Beginner to Advanced" },
-        { name: "Data Analytics Fundamentals", duration: "8 weeks", level: "Beginner" },
-        { name: "Digital Marketing Mastery", duration: "10 weeks", level: "Intermediate" },
-        { name: "AI & Prompt Engineering", duration: "6 weeks", level: "Intermediate" }
-      ],
-      color: "bg-purple-500"
-    },
-    {
-      category: "Corporate Training",
+      category: "Corporate Training Programs",
       icon: Briefcase,
-      description: "Customized training solutions for organizations and teams",
+      description: "Customized training solutions for organizations to enhance leadership and productivity",
+      link: "/academy/corporate-training",
       courses: [
-        { name: "Executive Leadership Program", duration: "8 weeks", level: "Executive" },
-        { name: "Team Building & Culture", duration: "2 weeks", level: "All Levels" },
-        { name: "Digital Transformation Training", duration: "6 weeks", level: "Manager+" },
-        { name: "Customer Service Excellence", duration: "4 weeks", level: "All Levels" }
+        { name: "Leadership Mastery", duration: "8 hours", level: "Manager+", description: "Comprehensive leadership development program" },
+        { name: "Team Building & Culture", duration: "6 hours", level: "All Levels", description: "Foster strong teams and positive organizational culture" },
+        { name: "Digital Transformation", duration: "6 hours", level: "Manager+", description: "Navigate digital change and innovation effectively" },
+        { name: "Customer Service Excellence", duration: "4 hours", level: "All Levels", description: "Deliver exceptional customer experiences" }
       ],
       color: "bg-orange-500"
     }
@@ -56,11 +60,18 @@ const Academy = () => {
           <div className="container relative">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-white">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-6">
-                  Abhidh Academy
-                </h1>
+                <div className="flex items-center gap-4 mb-6">
+                  <img 
+                    src={academyLogo} 
+                    alt="Abhidh Academy Logo"
+                    className="h-16 w-16 object-contain"
+                  />
+                  <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+                    Abhidh Academy
+                  </h1>
+                </div>
                 <p className="text-xl text-white/90 mb-8">
-                  Comprehensive training programs designed to enhance your professional skills and accelerate career growth through practical, industry-relevant education.
+                  Professional training and skill development in Nepal. We bridge the gap between education and employability through comprehensive programs for students, professionals, and corporates in soft skills, leadership, communication, digital marketing, AI, IT, Excel, accounting, and more.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" variant="secondary">
@@ -78,7 +89,7 @@ const Academy = () => {
               <div className="relative">
                 <img 
                   src={academyImage} 
-                  alt="Professional training and education at Abhidh Academy"
+                  alt="Professional training and education at Abhidh Academy in Nepal"
                   className="rounded-lg shadow-2xl"
                 />
               </div>
@@ -157,11 +168,12 @@ const Academy = () => {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
                       {program.courses.map((course, courseIndex) => (
-                        <div key={courseIndex} className="p-4 bg-background rounded-lg border">
+                        <div key={courseIndex} className="p-6 bg-background rounded-lg border hover:shadow-md transition-shadow">
                           <h4 className="font-semibold mb-2">{course.name}</h4>
-                          <div className="flex flex-wrap gap-2 mb-3">
+                          <p className="text-sm text-muted-foreground mb-3">{course.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-4">
                             <Badge variant="secondary" className="text-xs">
                               {course.duration}
                             </Badge>
@@ -174,6 +186,14 @@ const Academy = () => {
                           </Button>
                         </div>
                       ))}
+                    </div>
+                    <div className="text-center">
+                      <Button asChild variant="default">
+                        <Link to={program.link}>
+                          View All {program.category}
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Link>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
