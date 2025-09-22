@@ -16,6 +16,10 @@ import NotFound from "./pages/NotFound";
 import CollegeTraining from "./pages/Academy/CollegeTraining";
 import CorporateTraining from "./pages/Academy/CorporateTraining";
 import SchoolTraining from "./pages/Academy/SchoolTraining";
+import SelfPacedCourseDetail from "./pages/Academy/SelfPacedCourseDetail";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faFacebookF, faInstagram, faTwitter, faLinkedinIn, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -142,6 +146,10 @@ function RouteWrapper() {
           <Route path="/academy/college-training" element={<CollegeTraining />} />
           <Route path="/academy/corporate-training" element={<CorporateTraining />} />
           <Route path="/academy/school-training" element={<SchoolTraining />} />
+          <Route path="/academy/self-paced/:courseId" element={<SelfPacedCourseDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

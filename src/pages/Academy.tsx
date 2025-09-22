@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, Clock, Award, BookOpen, Code, Briefcase, ArrowRight } from "lucide-react";
+import { Users, BookOpen, Code, ArrowRight } from "lucide-react"; // Removed unused imports
 import { Link } from "react-router-dom";
 import academyImage from "@/assets/academy-image.jpg";
 import academyLogo from "@/assets/abhidh-academy-logo.png";
@@ -13,73 +13,86 @@ import { motion } from "framer-motion";
 const Academy = () => {
   const programs = [
     {
-      category: "School Training Programs",
+      category: "Soft Skills Training",
       icon: Users,
-      description: "Age-appropriate training for students to develop curiosity, creativity, and essential life skills",
-      link: "/academy/school-training",
+      description: "Empower students, professionals, and organizations with essential soft skills for success.",
+      link: "/academy/soft-skills-training",
       courses: [
-        { name: "How to Ask Questions", duration: "6 hours", level: "Grade 5-7", description: "Developing curiosity and communication skills through questioning techniques" },
-        { name: "Creative Thinking & Innovation", duration: "8 hours", level: "Grade 6-8", description: "Foster creative thinking and problem-solving abilities" },
-        { name: "Study Skills & Time Management", duration: "8 hours", level: "Grade 7-9", description: "Effective study habits and academic organization" },
-        { name: "Presentation & Communication", duration: "6 hours", level: "Grade 8-10", description: "Build confidence in public speaking and presentation skills" }
+        { name: "School Trainings", duration: "Varies", level: "Grade 5-10", description: "Age-appropriate training programs for schools." },
+        { name: "College Trainings", duration: "Varies", level: "All Levels", description: "Comprehensive soft skills training for college students." },
+        { name: "Corporate Trainings", duration: "Varies", level: "Professional", description: "Customized workshops for organizations to enhance productivity." }
       ],
       color: "bg-green-500"
     },
     {
-      category: "College Training Programs", 
+      category: "Technical Trainings",
       icon: Code,
-      description: "Comprehensive soft skills training designed for college students to enhance employability",
-      link: "/academy/college-training",
+      description: "Stay ahead with cutting-edge technical skills in digital marketing, AI, and web development.",
+      link: "/academy/technical-training",
       courses: [
-        { name: "Communication Skills", duration: "10 hours", level: "All Levels", description: "Master verbal, nonverbal, and written communication techniques" },
-        { name: "Team Work & Collaboration", duration: "8 hours", level: "All Levels", description: "Develop effective teamwork and collaborative problem-solving skills" },
-        { name: "Presentation Skills", duration: "6 hours", level: "All Levels", description: "Build confidence in delivering impactful presentations" },
-        { name: "Leadership Fundamentals", duration: "8 hours", level: "Intermediate", description: "Essential leadership skills for future career success" }
+        { name: "Digital Marketing", duration: "6 weeks", level: "Beginner-Advanced", description: "Master SEO, social media, and paid advertising." },
+        { name: "Artificial Intelligence", duration: "8 weeks", level: "Intermediate", description: "Learn AI tools, machine learning, and real-world applications." },
+        { name: "Web Development", duration: "12 weeks", level: "Beginner-Advanced", description: "Learn HTML, CSS, JavaScript, and frameworks to build responsive websites." }
       ],
       color: "bg-blue-500"
     },
     {
-      category: "Corporate Training Programs",
-      icon: Briefcase,
-      description: "Customized training solutions for organizations to enhance leadership and productivity",
-      link: "/academy/corporate-training",
+      category: "Accounting & Taxation",
+      icon: BookOpen,
+      description: "Comprehensive training in accounting, taxation, and Excel for aspiring finance professionals.",
+      link: "/academy/accounting-training",
       courses: [
-        { name: "Leadership Mastery", duration: "8 hours", level: "Manager+", description: "Comprehensive leadership development program" },
-        { name: "Team Building & Culture", duration: "6 hours", level: "All Levels", description: "Foster strong teams and positive organizational culture" },
-        { name: "Digital Transformation", duration: "6 hours", level: "Manager+", description: "Navigate digital change and innovation effectively" },
-        { name: "Customer Service Excellence", duration: "4 hours", level: "All Levels", description: "Deliver exceptional customer experiences" }
+        { name: "Basic Accounting", duration: "4 weeks", level: "Beginner", description: "Learn the fundamentals of accounting." },
+        { name: "Accounting for Accountants", duration: "6 weeks", level: "Intermediate", description: "Advanced accounting principles for professionals." },
+        { name: "Taxation", duration: "4 weeks", level: "All Levels", description: "Understand taxation principles and practices." },
+        { name: "Master in MS Excel", duration: "6 weeks", level: "All Levels", description: "Gain complete mastery in Excel for data management." }
       ],
       color: "bg-orange-500"
+    }
+  ];
+
+  const selfPacedCourses = [
+    {
+      id: "time-management",
+      name: "Time Management & Productivity",
+      description: "Learn proven strategies and techniques to organize your time, set priorities, and achieve more with less stress — all at your own pace.",
+      duration: "6 Hours",
+      price: "$50"
     },
     {
-      category: "IT Training Programs",
-      icon: BookOpen,
-      description: "Cutting-edge IT courses to boost your digital skills and career prospects.",
-      link: "/academy/it-training",
-      courses: [
-        { name: "Full Stack Web Development", duration: "12 weeks", level: "Beginner-Advanced", description: "Master HTML, CSS, JavaScript, React, Node.js, and databases." , featured: true },
-        { name: "Python for Data Science", duration: "8 weeks", level: "All Levels", description: "Analyze data, build models, and visualize insights with Python." },
-        { name: "Cloud Computing with AWS", duration: "6 weeks", level: "Intermediate", description: "Deploy, manage, and scale applications on AWS." , featured: true },
-        { name: "Cybersecurity Essentials", duration: "6 weeks", level: "All Levels", description: "Protect systems and data with hands-on security training." },
-        { name: "AI & Machine Learning", duration: "10 weeks", level: "Intermediate-Advanced", description: "Build and deploy intelligent systems using ML algorithms." , featured: true },
-        { name: "DevOps & CI/CD", duration: "5 weeks", level: "Intermediate", description: "Automate, test, and deploy software efficiently with DevOps tools." }
-      ],
-      color: "bg-purple-600"
+      id: "confidence-building",
+      name: "Confidence Building & Public Speaking Basics",
+      description: "Boost your self-confidence and master the basics of public speaking through practical video lessons and self-practice exercises.",
+      duration: "4 Hours",
+      price: "$40"
     },
     {
-      category: "Digital Marketing Training Programs",
-      icon: Award,
-      description: "Master the latest digital marketing skills to grow your brand and career.",
-      link: "/academy/digital-marketing-training",
-      courses: [
-        { name: "SEO Mastery", duration: "6 weeks", level: "All Levels", description: "Boost website rankings and organic traffic with advanced SEO techniques.", featured: true },
-        { name: "Social Media Marketing", duration: "5 weeks", level: "Beginner-Intermediate", description: "Grow your audience and engagement on all major social platforms." },
-        { name: "Google Ads & PPC", duration: "4 weeks", level: "Intermediate", description: "Create, manage, and optimize paid ad campaigns for maximum ROI.", featured: true },
-        { name: "Content Marketing", duration: "6 weeks", level: "All Levels", description: "Develop compelling content strategies that drive results." },
-        { name: "Email Marketing Automation", duration: "3 weeks", level: "All Levels", description: "Automate and personalize email campaigns for higher conversions." },
-        { name: "Analytics & Conversion Optimization", duration: "4 weeks", level: "Intermediate-Advanced", description: "Analyze data and optimize funnels to maximize conversions.", featured: true }
-      ],
-      color: "bg-pink-500"
+      id: "seo-basics",
+      name: "SEO Basics for Beginners",
+      description: "Understand how search engines work and learn the fundamentals of SEO to improve website visibility and ranking step by step.",
+      duration: "6 Hours",
+      price: "$45"
+    },
+    {
+      id: "excel-beginners",
+      name: "Excel for Beginners",
+      description: "Start with the basics of Microsoft Excel — formulas, formatting, charts, and simple data management to build a strong foundation.",
+      duration: "8 Hours",
+      price: "$55"
+    },
+    {
+      id: "creative-thinking",
+      name: "Creative and Critical Thinking",
+      description: "Sharpen your ability to think outside the box, solve problems creatively, and make better decisions with structured critical thinking exercises.",
+      duration: "6 Hours",
+      price: "$50"
+    },
+    {
+      id: "accounting-basics",
+      name: "Basic Accounting Made Easy",
+      description: "Simplify the principles of accounting with easy-to-follow lessons, real-life examples, and practical exercises for beginners.",
+      duration: "8 Hours",
+      price: "$60"
     }
   ];
 
@@ -103,7 +116,7 @@ const Academy = () => {
                   </h1>
                 </div>
                 <p className="text-xl text-white/90 mb-8">
-                  Professional training and skill development in Nepal. We bridge the gap between education and employability through comprehensive programs for students, professionals, and corporates in soft skills, leadership, communication, digital marketing, AI, IT, Excel, accounting, and more.
+                  “Learn. Grow. Succeed.” Abhidh Academy is dedicated to empowering individuals and organizations with high-quality training to unlock their full potential and achieve success.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" variant="secondary">
@@ -129,95 +142,26 @@ const Academy = () => {
           </div>
         </section>
 
-
-        {/* Featured Courses Section */}
-        <section className="py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 relative overflow-hidden">
+        {/* Mission, Vision, and Key Features */}
+        <section className="py-24 bg-gray-100">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 bg-clip-text text-transparent">
-                Featured Courses
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Explore our most popular and impactful courses, handpicked for your success.
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4">Why Choose Abhidh Academy?</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                At Abhidh Academy, we believe in empowering individuals with the skills they need to succeed. Here's what sets us apart:
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {programs.flatMap((program) =>
-                program.courses
-                  .filter((course) => course.featured)
-                  .map((course, idx) => {
-                    const slug = `${program.link}/${course.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
-                    return (
-                      <Link to={slug} key={slug} className="block group">
-                        <motion.div
-                          className="relative p-8 bg-white/90 rounded-2xl border-0 shadow-2xl hover:shadow-3xl hover:scale-[1.03] transition-all duration-300 flex flex-col gap-3 cursor-pointer ring-2 ring-primary/80 ring-offset-2 ring-offset-white bg-gradient-to-br from-white via-purple-50 to-blue-50"
-                          whileHover={{ scale: 1.05, boxShadow: "0 12px 40px 0 rgba(80,0,200,0.10)" }}
-                          initial={{ opacity: 0, y: 30 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5, delay: idx * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <span className="absolute top-3 right-3 bg-gradient-to-r from-purple-500 to-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
-                            Featured
-                          </span>
-                          <h4 className="font-bold text-xl mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">
-                            {course.name}
-                          </h4>
-                          <p className="text-base text-muted-foreground mb-2 min-h-[48px]">{course.description}</p>
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
-                              {course.duration}
-                            </Badge>
-                            <Badge variant="outline" className="text-xs px-2 py-1 rounded-full">
-                              {course.level}
-                            </Badge>
-                          </div>
-                          <Button size="sm" variant="secondary" className="w-full font-bold shadow-lg group-hover:bg-primary group-hover:text-white transition-colors duration-200" tabIndex={-1}>
-                            Learn More
-                          </Button>
-                        </motion.div>
-                      </Link>
-                    );
-                  })
-              )}
-            </div>
-          </div>
-        </section>
-
-        {/* Overview */}
-        <section className="py-24">
-          <div className="container">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tight mb-4">
-                Why Choose Abhidh Academy?
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Our academy combines theoretical knowledge with hands-on practice, ensuring you develop skills that are immediately applicable in real-world scenarios.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              {[
-                {
-                  icon: Award,
-                  title: "Industry-Recognized Certification",
-                  description: "Earn certificates that are valued by top employers and industry professionals."
-                },
-                {
-                  icon: Users,
-                  title: "Expert Instructors",
-                  description: "Learn from experienced professionals with real-world industry experience."
-                },
-                {
-                  icon: Clock,
-                  title: "Flexible Learning",
-                  description: "Choose from various schedules and formats to fit your lifestyle and commitments."
-                }
+              {["Comprehensive Training Programs – Covering both soft skills and technical courses.",
+                "Expert Trainers – Highly experienced professionals and industry experts.",
+                "Customized Training Solutions – Tailored workshops for schools, colleges, and organizations.",
+                "Self-Paced Learning – Flexible online modules with resources for independent learning.",
+                "Blended Learning Approach – A mix of interactive sessions, practical exercises, and real-world case studies.",
+                "Global Outlook with Local Relevance – Programs designed to meet international standards while addressing local challenges."
               ].map((feature, index) => (
-                <Card key={index} className="bg-gradient-card shadow-elegant border-0 text-center">
+                <Card key={index} className="bg-white shadow-md border-0">
                   <CardContent className="p-6">
-                    <feature.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold text-lg mb-3">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="text-muted-foreground">{feature}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -226,7 +170,6 @@ const Academy = () => {
         </section>
 
         {/* Training Categories */}
-
         <section className="py-24 bg-muted/30">
           <div className="container">
             <div className="text-center mb-16">
@@ -234,7 +177,7 @@ const Academy = () => {
                 Our Training Programs
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Comprehensive programs designed to meet diverse learning needs and career objectives
+                Comprehensive programs designed to meet diverse learning needs and career objectives.
               </p>
             </div>
             <div className="space-y-16">
@@ -275,42 +218,29 @@ const Academy = () => {
                     </CardHeader>
                     <CardContent className="relative z-10">
                       <div className="grid md:grid-cols-2 gap-8 mb-8">
-                        {program.courses.map((course, courseIndex) => {
-                          // Generate a slug for the course info page
-                          const slug = `${program.link}/${course.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
-                          const isFeatured = course.featured;
-                          return (
-                            <Link to={slug} key={courseIndex} className="block group">
-                              <motion.div
-                                className={`relative p-6 bg-white/80 rounded-xl border border-muted shadow-md hover:shadow-xl hover:bg-white/100 transition-all duration-300 flex flex-col gap-2 group cursor-pointer ${isFeatured ? 'ring-2 ring-primary/80 ring-offset-2 ring-offset-white scale-[1.03] bg-gradient-to-br from-purple-50 to-white' : ''}`}
-                                whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)" }}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: courseIndex * 0.1 }}
-                                viewport={{ once: true }}
-                              >
-                                {isFeatured && (
-                                  <span className="absolute top-3 right-3 bg-gradient-to-r from-purple-500 to-pink-400 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
-                                    Featured
-                                  </span>
-                                )}
-                                <h4 className="font-semibold text-lg mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">{course.name}</h4>
-                                <p className="text-sm text-muted-foreground mb-2">{course.description}</p>
-                                <div className="flex flex-wrap gap-2 mb-3">
-                                  <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
-                                    {course.duration}
-                                  </Badge>
-                                  <Badge variant="outline" className="text-xs px-2 py-1 rounded-full">
-                                    {course.level}
-                                  </Badge>
-                                </div>
-                                <Button size="sm" variant={isFeatured ? "secondary" : "outline"} className={`w-full group-hover:bg-primary group-hover:text-white transition-colors duration-200 ${isFeatured ? 'font-bold shadow-lg' : ''}`} tabIndex={-1}>
-                                  Learn More
-                                </Button>
-                              </motion.div>
-                            </Link>
-                          );
-                        })}
+                        {program.courses.map((course, courseIndex) => (
+                          <div key={courseIndex} className="block group">
+                            <motion.div
+                              className="relative p-6 bg-white/80 rounded-xl border border-muted shadow-md hover:shadow-xl hover:bg-white/100 transition-all duration-300 flex flex-col gap-2 group cursor-pointer"
+                              whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)" }}
+                              initial={{ opacity: 0, y: 30 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.5, delay: courseIndex * 0.1 }}
+                              viewport={{ once: true }}
+                            >
+                              <h4 className="font-semibold text-lg mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">{course.name}</h4>
+                              <p className="text-sm text-muted-foreground mb-2">{course.description}</p>
+                              <div className="flex flex-wrap gap-2 mb-3">
+                                <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
+                                  {course.duration}
+                                </Badge>
+                                <Badge variant="outline" className="text-xs px-2 py-1 rounded-full">
+                                  {course.level}
+                                </Badge>
+                              </div>
+                            </motion.div>
+                          </div>
+                        ))}
                       </div>
                       <div className="text-center">
                         <Button asChild variant="default" className="shadow-lg group-hover:scale-105 transition-transform duration-200">
@@ -328,27 +258,46 @@ const Academy = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-primary">
-          <div className="container text-center">
-            <div className="text-white">
-              <h2 className="text-3xl font-bold tracking-tight mb-6">
-                Start Your Learning Journey Today
+        {/* Self-Paced Learning Section */}
+        <section className="py-24 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
+          <div className="container">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 bg-clip-text text-transparent">
+                Self-Paced Learning
               </h2>
-              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Join hundreds of professionals who have transformed their careers through our comprehensive training programs.
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Explore our flexible online modules designed for independent learning. Learn at your own pace and convenience.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" variant="secondary">
-                  <Link to="/contact" className="flex items-center gap-2">
-                    Get Started
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10">
-                  <Link to="/contact">Schedule Consultation</Link>
-                </Button>
-              </div>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {selfPacedCourses.map((course, index) => (
+                <motion.div
+                  key={index}
+                  className="relative p-6 bg-white/90 rounded-xl border border-muted shadow-md hover:shadow-xl hover:bg-white/100 transition-all duration-300 flex flex-col gap-2"
+                  whileHover={{ scale: 1.05, boxShadow: "0 8px 32px 0 rgba(0,0,0,0.18)" }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <h4 className="font-semibold text-lg mb-1 text-primary group-hover:underline underline-offset-4 transition-all duration-200">
+                    {course.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-2">{course.description}</p>
+                  <div className="flex justify-between items-center mb-3">
+                    <Badge variant="secondary" className="text-xs px-2 py-1 rounded-full">
+                      {course.duration}
+                    </Badge>
+                    <span className="font-bold text-primary">{course.price}</span>
+                  </div>
+                  <Button asChild size="sm" variant="default" className="w-full mt-auto">
+                    <Link to={`/academy/self-paced/${course.id}`}>
+                      Enroll Now
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Link>
+                  </Button>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

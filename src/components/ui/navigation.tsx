@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -18,6 +19,25 @@ const Navigation = () => {
   ];
 
   const isActive = (href: string) => location.pathname === href;
+
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      const user = localStorage.getItem("currentUser");
+      setIsLoggedIn(!!user);
+    };
+
+    checkLoginStatus();
+
+    window.addEventListener("storage", checkLoginStatus);
+    window.addEventListener("login", checkLoginStatus);
+    window.addEventListener("logout", checkLoginStatus);
+
+    return () => {
+      window.removeEventListener("storage", checkLoginStatus);
+      window.removeEventListener("login", checkLoginStatus);
+      window.removeEventListener("logout", checkLoginStatus);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/60 dark:bg-background/80 backdrop-blur-xl shadow-lg supports-[backdrop-filter]:bg-background/60">
@@ -87,6 +107,23 @@ const Navigation = () => {
                     )}
                   </Link>
                 ))}
+                {isLoggedIn ? (
+                  <Link
+                    to="/dashboard"
+                    className="block bg-primary text-white px-4 py-2 rounded-md text-center hover:bg-primary/90 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Dashboard
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="block bg-primary text-white px-4 py-2 rounded-md text-center hover:bg-primary/90 transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login/Signup
+                  </Link>
+                )}
               </div>
             </div>
           </SheetContent>
@@ -101,9 +138,25 @@ const Navigation = () => {
             </Link>
           </div>
           <nav className="flex items-center">
-            <Button asChild variant="default" size="sm" className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 border-0 shadow-lg hover:scale-105 transition-transform duration-200">
-              <Link to="/contact">Get Started</Link>
-            </Button>
+            {isLoggedIn ? (
+              <Button
+                asChild
+                variant="default"
+                size="sm"
+                className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+            ) : (
+              <Button
+                asChild
+                variant="default"
+                size="sm"
+                className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+              >
+                <Link to="/login">Login/Signup</Link>
+              </Button>
+            )}
           </nav>
         </div>
       </nav>
