@@ -40,7 +40,7 @@ const Contact = () => {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+        <section className="py-24" style={{ backgroundColor: '#1A1F71' }}>
           <motion.div
             className="container"
             initial={{ opacity: 0, y: 40 }}

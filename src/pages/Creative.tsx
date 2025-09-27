@@ -71,7 +71,7 @@ const Creative = () => {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900 relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1F71' }}>
           <motion.div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
             style={{ backgroundImage: `url(${creativeImage})` }}
@@ -238,7 +238,7 @@ const Creative = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-gradient-primary">
+        <section className="py-24" style={{ backgroundColor: '#1A1F71' }}>
           <div className="container text-center">
             <div className="text-white">
               <h2 className="text-3xl font-bold tracking-tight mb-6">

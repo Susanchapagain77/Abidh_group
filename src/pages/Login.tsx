@@ -64,7 +64,13 @@ const Login = () => {
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               )}
-              <Button type="submit" className="w-full">Login</Button>
+              <Button 
+                type="submit" 
+                className="w-full" 
+                style={{ backgroundColor: '#F5F5DC', color: '#000' }}
+              >
+                Login
+              </Button>
             </form>
             <p className="mt-4 text-center">
               Don't have an account? <Link to="/signup" className="text-primary">Sign up</Link>

@@ -30,12 +30,19 @@ const AboutSection = () => {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
               About ABHIDH Group
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Founded with a vision to transform how people learn and businesses grow, ABHIDH Group operates through two specialized divisions that work in perfect harmony.
-            </p>
+<p className="text-lg text-muted-foreground mb-6">
+  In a fast-changing world where industries evolve every day, individuals and organizations
+  must keep upgrading themselves to stay ahead. <b>Abhidh Group</b> exists to make this
+  transformation possible.
+</p>
+
             <p className="text-lg text-muted-foreground mb-8">
-              Our Academy nurtures individual potential through comprehensive training programs, while our Creative division helps businesses thrive in the digital landscape. Together, we create a ecosystem of continuous learning and innovation.
-            </p>
+Through <b>Abhidh Academy</b>, we deliver high-impact training in
+leadership, communication, digital marketing, IT, and more to equip students, professionals,
+and organizations with the right skills for the future. Through <b>Abhidh Creative</b>, we offer
+businesses advanced digital marketing, branding, and IT development services that boost
+visibility, attract customers, and accelerate growth. Together, we make people stronger and
+businesses smarter.</p>
             <Button asChild size="lg" className="bg-gradient-primary border-0">
               <Link to="/about" className="flex items-center gap-2">
                 Learn Our Story

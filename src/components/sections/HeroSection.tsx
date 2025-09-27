@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+    <section className="relative overflow-hidden py-24 lg:py-32" style={{ backgroundColor: '#1A1F71' }}>
       {/* Parallax background image with animated gradient overlay */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -20,7 +20,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.2 }}
-        style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(0,255,255,0.18) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(245,245,220,0.1) 0%, transparent 70%)" }}
       />
       <div className="container relative z-10">
         <div className="mx-auto max-w-4xl text-center">
@@ -30,14 +30,14 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Empowering Growth Through
+            Empowering People & Businesses Through
             <motion.span
-              className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient-x"
+              className="block text-cream animate-gradient-x"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Education & Innovation
+               Skills and Digital Solutions
             </motion.span>
           </motion.h1>
           <motion.p
@@ -46,8 +46,9 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
           >
-            ABHIDH Group bridges the gap between learning and doing. We train minds through our Academy and transform businesses through our Creative solutions.
-          </motion.p>
+At Abhidh Group, we bring together education, innovation, and technology to prepare
+individuals for brighter careers and help businesses achieve sustainable growth in today’s
+competitive digital world.</motion.p>
           <motion.div
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}

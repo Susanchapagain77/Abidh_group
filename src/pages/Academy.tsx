@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Users, BookOpen, Code, ArrowRight } from "lucide-react"; // Removed unused imports
 import { Link } from "react-router-dom";
 import academyImage from "@/assets/academy-image.jpg";
-import academyLogo from "@/assets/abhidh-academy-logo.png";
+import abhidhGroupLogo from "@/assets/Abhidh Group Logo.png";
 import { motion } from "framer-motion";
 
 const Academy = () => {
@@ -101,14 +101,14 @@ const Academy = () => {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-hero relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1F71' }}>
           <div className="container relative">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-white">
                 <div className="flex items-center gap-4 mb-6">
                   <img 
-                    src={academyLogo} 
-                    alt="Abhidh Academy Logo"
+                    src={abhidhGroupLogo} 
+                    alt="Abhidh Group Logo"
                     className="h-16 w-16 object-contain"
                   />
                   <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -148,23 +148,36 @@ const Academy = () => {
             <div className="text-center mb-16">
               <h2 className="text-4xl font-extrabold tracking-tight mb-4">Why Choose Abhidh Academy?</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                At Abhidh Academy, we believe in empowering individuals with the skills they need to succeed. Here's what sets us apart:
+At <b>Abhidh Academy</b>, we believe education should go beyond classrooms and textbooks – it
+should prepare individuals for the real challenges of life and work. That is why we design
+training programs that are engaging, practical, and focused on application.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {["Comprehensive Training Programs – Covering both soft skills and technical courses.",
-                "Expert Trainers – Highly experienced professionals and industry experts.",
-                "Customized Training Solutions – Tailored workshops for schools, colleges, and organizations.",
-                "Self-Paced Learning – Flexible online modules with resources for independent learning.",
-                "Blended Learning Approach – A mix of interactive sessions, practical exercises, and real-world case studies.",
-                "Global Outlook with Local Relevance – Programs designed to meet international standards while addressing local challenges."
-              ].map((feature, index) => (
-                <Card key={index} className="bg-white shadow-md border-0">
-                  <CardContent className="p-6">
-                    <p className="text-muted-foreground">{feature}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="bg-white rounded-2xl shadow-2xl p-8 mt-8" style={{ boxShadow: '0 25px 50px -12px rgba(255, 255, 255, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)' }}>
+              <div className="grid md:grid-cols-3 gap-8">
+                {["Comprehensive Training Programs – Covering both soft skills and technical courses.",
+                  "Expert Trainers – Highly experienced professionals and industry experts.",
+                  "Customized Training Solutions – Tailored workshops for schools, colleges, and organizations.",
+                  "Self-Paced Learning – Flexible online modules with resources for independent learning.",
+                  "Blended Learning Approach – A mix of interactive sessions, practical exercises, and real-world case studies.",
+                  "Global Outlook with Local Relevance – Programs designed to meet international standards while addressing local challenges."
+                ].map((feature, index) => (
+                  <Card 
+                    key={index} 
+                    className="bg-white shadow-md border-0 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer group hover:bg-opacity-90"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#3B4A9C';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'white';
+                    }}
+                  >
+                    <CardContent className="p-6">
+                      <p className="text-muted-foreground group-hover:text-white transition-colors duration-300">{feature}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -173,7 +186,7 @@ const Academy = () => {
         <section className="py-24 bg-muted/30">
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-blue-500 via-green-400 to-orange-400 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4" style={{ color: '#1A1F71' }}>
                 Our Training Programs
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -259,10 +272,10 @@ const Academy = () => {
         </section>
 
         {/* Self-Paced Learning Section */}
-        <section className="py-24 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200">
+        <section className="py-24" style={{ backgroundColor: '#F5F5DC' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-extrabold tracking-tight mb-4 animate-gradient-text bg-gradient-to-r from-purple-600 via-blue-500 to-pink-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl font-extrabold tracking-tight mb-4" style={{ color: '#1A1F71' }}>
                 Self-Paced Learning
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

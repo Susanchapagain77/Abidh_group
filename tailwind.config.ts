@@ -14,6 +14,13 @@ export default {
     },
     extend: {
       colors: {
+        // Brand Colors
+        regalBlue: "#1A1F71",
+        white: "#FFFFFF",
+        cream: "#F5F5DC",
+        slateGrey: "#708090",
+        
+        // CSS Variable based colors (maintained for UI components)
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

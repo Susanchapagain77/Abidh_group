@@ -8,104 +8,97 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 215 16% 15%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 236 63% 27%; /* Regal Blue */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 16% 15%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 236 63% 27%; /* Regal Blue */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 16% 15%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 236 63% 27%; /* Regal Blue */
 
-    --primary: 243 75% 59%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 236 63% 27%; /* Regal Blue */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 215 16% 15%;
+    --secondary: 60 56% 91%; /* Cream */
+    --secondary-foreground: 236 63% 27%; /* Regal Blue */
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 60 56% 91%; /* Cream */
+    --muted-foreground: 210 14% 53%; /* Slate Grey */
 
-    --accent: 32 95% 44%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 14% 53%; /* Slate Grey */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 243 75% 59%;
+    --border: 210 14% 53%; /* Slate Grey */
+    --input: 60 56% 91%; /* Cream */
+    --ring: 236 63% 27%; /* Regal Blue */
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(243 75% 59%), hsl(262 83% 58%));
-    --gradient-hero: linear-gradient(135deg, hsl(243 75% 59%) 0%, hsl(262 83% 58%) 50%, hsl(32 95% 44%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
-    --shadow-elegant: 0 10px 40px -10px hsl(243 75% 59% / 0.2);
-    --shadow-hover: 0 20px 60px -10px hsl(243 75% 59% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(236 63% 27%), hsl(236 63% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(236 63% 27%) 0%, hsl(236 63% 35%) 50%, hsl(210 14% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(60 56% 95%) 100%);
+    --shadow-elegant: 0 10px 40px -10px hsl(236 63% 27% / 0.2);
+    --shadow-hover: 0 20px 60px -10px hsl(236 63% 27% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 60 56% 95%; /* Light Cream */
+    --sidebar-foreground: 236 63% 27%; /* Regal Blue */
+    --sidebar-primary: 236 63% 27%; /* Regal Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 60 56% 91%; /* Cream */
+    --sidebar-accent-foreground: 236 63% 27%; /* Regal Blue */
+    --sidebar-border: 210 14% 53%; /* Slate Grey */
+    --sidebar-ring: 236 63% 27%; /* Regal Blue */
   }
 
   .dark {
-    --background: 215 28% 9%;
-    --foreground: 0 0% 98%;
+    --background: 236 63% 15%; /* Darker Regal Blue */
+    --foreground: 0 0% 100%; /* White */
 
-    --card: 215 28% 9%;
-    --card-foreground: 0 0% 98%;
+    --card: 236 63% 15%; /* Darker Regal Blue */
+    --card-foreground: 0 0% 100%; /* White */
 
-    --popover: 215 28% 9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 236 63% 15%; /* Darker Regal Blue */
+    --popover-foreground: 0 0% 100%; /* White */
 
-    --primary: 243 75% 59%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 236 63% 27%; /* Regal Blue */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 215 25% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 14% 35%; /* Darker Slate Grey */
+    --secondary-foreground: 0 0% 100%; /* White */
 
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 14% 35%; /* Darker Slate Grey */
+    --muted-foreground: 210 14% 70%; /* Lighter Slate Grey */
 
-    --accent: 32 95% 44%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 14% 53%; /* Slate Grey */
+    --accent-foreground: 0 0% 100%; /* White */
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 15%;
-    --input: 215 25% 15%;
-    --ring: 243 75% 59%;
+    --border: 210 14% 35%; /* Darker Slate Grey */
+    --input: 210 14% 35%; /* Darker Slate Grey */
+    --ring: 236 63% 27%; /* Regal Blue */
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(243 75% 59%), hsl(262 83% 58%));
-    --gradient-hero: linear-gradient(135deg, hsl(243 75% 59%) 0%, hsl(262 83% 58%) 50%, hsl(32 95% 44%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(215 28% 12%) 0%, hsl(215 25% 15%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(236 63% 27%), hsl(236 63% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(236 63% 27%) 0%, hsl(236 63% 35%) 50%, hsl(210 14% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(236 63% 20%) 0%, hsl(210 14% 25%) 100%);
     --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.3);
     --shadow-hover: 0 20px 60px -10px hsl(0 0% 0% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 236 63% 15%; /* Darker Regal Blue */
+    --sidebar-foreground: 0 0% 100%; /* White */
+    --sidebar-primary: 236 63% 27%; /* Regal Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 210 14% 35%; /* Darker Slate Grey */
+    --sidebar-accent-foreground: 0 0% 100%; /* White */
+    --sidebar-border: 210 14% 35%; /* Darker Slate Grey */
+    --sidebar-ring: 236 63% 27%; /* Regal Blue */
   }
 }
 

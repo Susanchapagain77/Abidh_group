@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import abhidhGroupLogo from "@/assets/Abhidh Group Logo White.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,9 +45,11 @@ const Navigation = () => {
       <nav className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-extrabold text-2xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-lg sm:inline-block tracking-widest">
-              ABHIDH GROUP
-            </span>
+            <img 
+              src={abhidhGroupLogo} 
+              alt="Abhidh Group Logo"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <div className="flex items-center space-x-6 text-base font-semibold">
             {navigation.map((item) => (
@@ -84,9 +87,11 @@ const Navigation = () => {
               className="flex items-center"
               onClick={() => setIsOpen(false)}
             >
-              <span className="font-extrabold text-2xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-lg">
-                ABHIDH GROUP
-              </span>
+              <img 
+                src={abhidhGroupLogo} 
+                alt="Abhidh Group Logo"
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
               <div className="flex flex-col space-y-3">
@@ -103,7 +108,7 @@ const Navigation = () => {
                   >
                     <span>{item.name}</span>
                     {isActive(item.href) && (
-                      <span className="absolute left-0 right-0 -bottom-1 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full animate-pulse" />
+                      <span className="absolute left-0 right-0 -bottom-1 h-1 rounded-full animate-pulse" style={{ backgroundColor: '#708090' }} />
                     )}
                   </Link>
                 ))}
@@ -118,7 +123,8 @@ const Navigation = () => {
                 ) : (
                   <Link
                     to="/login"
-                    className="block bg-primary text-white px-4 py-2 rounded-md text-center hover:bg-primary/90 transition-colors"
+                    className="block text-white px-4 py-2 rounded-md text-center hover:opacity-90 transition-colors"
+                    style={{ backgroundColor: '#1A1F71' }}
                     onClick={() => setIsOpen(false)}
                   >
                     Login/Signup
@@ -132,9 +138,11 @@ const Navigation = () => {
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
             <Link to="/" className="md:hidden">
-              <span className="font-extrabold text-lg bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-lg">
-                ABHIDH GROUP
-              </span>
+              <img 
+                src={abhidhGroupLogo} 
+                alt="Abhidh Group Logo"
+                className="h-8 w-auto object-contain"
+              />
             </Link>
           </div>
           <nav className="flex items-center">
@@ -143,7 +151,8 @@ const Navigation = () => {
                 asChild
                 variant="default"
                 size="sm"
-                className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+                className="border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+                style={{ backgroundColor: '#1A1F71' }}
               >
                 <Link to="/dashboard">Dashboard</Link>
               </Button>
@@ -152,7 +161,8 @@ const Navigation = () => {
                 asChild
                 variant="default"
                 size="sm"
-                className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+                className="border-0 shadow-lg hover:scale-105 transition-transform duration-200"
+                style={{ backgroundColor: '#1A1F71', color: '#FFFF' }}
               >
                 <Link to="/login">Login/Signup</Link>
               </Button>

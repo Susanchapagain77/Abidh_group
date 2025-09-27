@@ -22,7 +22,7 @@ const About = () => {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+        <section className="py-24" style={{ backgroundColor: '#1A1F71' }}>
           <motion.div
             className="container"
             initial={{ opacity: 0, y: 40 }}
@@ -34,8 +34,9 @@ const About = () => {
                 Who We Are
               </h1>
               <p className="text-xl text-white/90 max-w-3xl mx-auto">
-                ABHIDH Group was founded with a simple yet powerful belief: that true growth happens when learning meets practical application.
-              </p>
+At <b>Abhidh Group</b>, we believe that growth is not just about achieving numbers – it is about
+creating value that lasts. 
+</p>
             </div>
           </motion.div>
         </section>
@@ -47,6 +48,9 @@ const About = () => {
               <div>
                 <h2 className="text-3xl font-bold tracking-tight mb-6">Our Story</h2>
                 <div className="space-y-4 text-lg text-muted-foreground">
+                  <p>We exist to empower individuals with the skills they need to
+succeed and to enable businesses with the strategies and technologies that help them
+thrive.</p>
                   <p>
                     In an increasingly competitive world, we recognized a critical gap between traditional education and the practical skills needed to succeed in modern careers and businesses.
                   </p>
@@ -79,6 +83,173 @@ const About = () => {
                 </Card>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Our Group Identity Section */}
+        <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1F71' }}>
+          {/* Background decorative elements */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 left-10 w-32 h-32 rounded-full" style={{ backgroundColor: '#FFFFFF' }}></div>
+            <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full" style={{ backgroundColor: '#F5F5DC' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full" style={{ backgroundColor: '#708090' }}></div>
+          </div>
+          
+          <div className="container relative z-10">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold tracking-tight mb-6 text-white">
+                Our Group Identity
+              </h2>
+              <div className="w-24 h-1 mx-auto mb-6 rounded-full" style={{ backgroundColor: '#F5F5DC' }}></div>
+              <p className="text-lg max-w-3xl mx-auto leading-relaxed text-white opacity-90">
+                Our identity as a group company lies in the strength of our two arms
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+              {/* Abhidh Academy Card */}
+              <motion.div
+                className="group"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 relative overflow-hidden">
+                  {/* Card accent */}
+                  <div className="absolute top-0 left-0 w-full h-2" style={{ backgroundColor: '#1A1F71' }}></div>
+                  
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center mr-4 shadow-lg" style={{ backgroundColor: '#1A1F71' }}>
+                        <Users className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold" style={{ color: '#1A1F71' }}>
+                          Abhidh Academy
+                        </h3>
+                        <p className="text-sm font-medium" style={{ color: '#708090' }}>
+                          Professional Training Institute
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      A professional training institute that <strong>nurtures skills, confidence, and career readiness</strong> among students, professionals, and organizations.
+                    </p>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#1A1F71' }}></div>
+                        <span className="text-sm text-gray-600">Skills Development</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#1A1F71' }}></div>
+                        <span className="text-sm text-gray-600">Confidence Building</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#1A1F71' }}></div>
+                        <span className="text-sm text-gray-600">Career Readiness</span>
+                      </div>
+                    </div>
+                    
+                    <motion.button
+                      className="w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+                      style={{ backgroundColor: '#1A1F71' }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => window.location.href = '/academy'}
+                    >
+                      Explore Academy
+                    </motion.button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              {/* Abhidh Creative Card */}
+              <motion.div
+                className="group"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0 relative overflow-hidden">
+                  {/* Card accent */}
+                  <div className="absolute top-0 left-0 w-full h-2" style={{ backgroundColor: '#708090' }}></div>
+                  
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center mr-4 shadow-lg" style={{ backgroundColor: '#708090' }}>
+                        <Zap className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold" style={{ color: '#708090' }}>
+                          Abhidh Creative
+                        </h3>
+                        <p className="text-sm font-medium" style={{ color: '#1A1F71' }}>
+                          Digital & IT Solutions Partner
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      A digital and IT solutions partner that helps businesses <strong>expand their reach, optimize their brand presence, and embrace innovation</strong>.
+                    </p>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#708090' }}></div>
+                        <span className="text-sm text-gray-600">Digital Expansion</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#708090' }}></div>
+                        <span className="text-sm text-gray-600">Brand Optimization</span>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#708090' }}></div>
+                        <span className="text-sm text-gray-600">Innovation Integration</span>
+                      </div>
+                    </div>
+                    
+                    <motion.button
+                      className="w-full py-3 px-6 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+                      style={{ backgroundColor: '#708090' }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => window.location.href = '/creative'}
+                    >
+                      Visit Creative
+                    </motion.button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </div>
+
+            {/* Bottom Message */}
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-4xl mx-auto p-8 rounded-2xl shadow-lg border-2" style={{ backgroundColor: 'white', borderColor: '#1A1F71' }}>
+                <h4 className="text-2xl font-bold mb-4" style={{ color: '#1A1F71' }}>
+                  Together, We Transform Society
+                </h4>
+                <p className="text-lg leading-relaxed" style={{ color: '#708090' }}>
+                  We combine the <strong>power of education and technology</strong> to drive meaningful 
+                  transformation in society, creating lasting impact through skills development and digital innovation.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
 
