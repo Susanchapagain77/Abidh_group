@@ -83,8 +83,15 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Blog & Insights | ABHIDH Group</title>
-        <meta name="description" content="Stay updated with the latest trends in education, technology, and business growth through our expert insights and practical guides." />
+        <title>Abhidh Blog | Career Skills, Digital Marketing & IT Insights</title>
+        <meta name="description" content="Read expert articles from Abhidh Group on soft skills, leadership, digital marketing trends, AI, IT, and business growth. Stay updated and ahead in your career or business." />
+        <meta name="keywords" content="Abhidh blog, career skills blog, digital marketing insights Nepal, IT trends Nepal, leadership articles, soft skills tips, business growth advice" />
+        <meta property="og:title" content="Abhidh Blog | Career Skills, Digital Marketing & IT Insights" />
+        <meta property="og:description" content="Read expert articles from Abhidh Group on soft skills, leadership, digital marketing trends, AI, IT, and business growth. Stay updated and ahead in your career or business." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Abhidh Blog | Career Skills, Digital Marketing & IT Insights" />
+        <meta name="twitter:description" content="Read expert articles from Abhidh Group on soft skills, leadership, digital marketing trends, AI, IT, and business growth. Stay updated and ahead in your career or business." />
       </Helmet>
       <Navigation />
       <main>

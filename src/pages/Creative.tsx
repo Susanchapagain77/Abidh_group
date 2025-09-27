@@ -65,8 +65,15 @@ const Creative = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Abhidh Creative | Digital Marketing, IT & Design Solutions</title>
-        <meta name="description" content="Transform your business with cutting-edge digital marketing, development, and creative solutions designed to accelerate growth and maximize ROI." />
+        <title>Abhidh Creative | Digital Marketing & IT Solutions in Nepal</title>
+        <meta name="description" content="Abhidh Creative helps businesses grow through digital marketing, SEO, social media, Google Ads, website development, mobile app design, and IT solutions. Build your brand's digital presence with us." />
+        <meta name="keywords" content="Abhidh Creative, digital marketing Nepal, SEO Nepal, website development Nepal, mobile app development, IT solutions Nepal, social media marketing, Google Ads Nepal" />
+        <meta property="og:title" content="Abhidh Creative | Digital Marketing & IT Solutions in Nepal" />
+        <meta property="og:description" content="Abhidh Creative helps businesses grow through digital marketing, SEO, social media, Google Ads, website development, mobile app design, and IT solutions. Build your brand's digital presence with us." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Abhidh Creative | Digital Marketing & IT Solutions in Nepal" />
+        <meta name="twitter:description" content="Abhidh Creative helps businesses grow through digital marketing, SEO, social media, Google Ads, website development, mobile app design, and IT solutions. Build your brand's digital presence with us." />
       </Helmet>
       <Navigation />
       <main>

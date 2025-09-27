@@ -5,10 +5,22 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Abhidh Group | Training, Digital Marketing & IT Solutions in Nepal</title>
+        <meta name="description" content="Abhidh Group empowers people and businesses through Abhidh Academy and Abhidh Creative. Explore world-class training, digital marketing, and IT solutions designed for growth in Nepal and beyond." />
+        <meta name="keywords" content="Abhidh Group, training Nepal, digital marketing Nepal, IT solutions Nepal, Abhidh Academy, Abhidh Creative, professional development, skill development, corporate training" />
+        <meta property="og:title" content="Abhidh Group | Training, Digital Marketing & IT Solutions in Nepal" />
+        <meta property="og:description" content="Abhidh Group empowers people and businesses through Abhidh Academy and Abhidh Creative. Explore world-class training, digital marketing, and IT solutions designed for growth in Nepal and beyond." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Abhidh Group | Training, Digital Marketing & IT Solutions in Nepal" />
+        <meta name="twitter:description" content="Abhidh Group empowers people and businesses through Abhidh Academy and Abhidh Creative. Explore world-class training, digital marketing, and IT solutions designed for growth in Nepal and beyond." />
+      </Helmet>
       <Navigation />
       <main>
         <HeroSection />

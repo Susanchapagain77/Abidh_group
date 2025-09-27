@@ -16,8 +16,15 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Who We Are | ABHIDH Group</title>
-        <meta name="description" content="ABHIDH Group was founded with a simple yet powerful belief: that true growth happens when learning meets practical application." />
+        <title>About Abhidh Group | Building Skills & Digital Growth Together</title>
+        <meta name="description" content="Discover Abhidh Group, the parent company of Abhidh Academy and Abhidh Creative. Learn about our mission, vision, and values as we empower individuals with skills and help businesses grow digitally." />
+        <meta name="keywords" content="Abhidh Group about, company mission Nepal, skills development Nepal, digital growth Nepal, Abhidh Academy parent company, professional training company" />
+        <meta property="og:title" content="About Abhidh Group | Building Skills & Digital Growth Together" />
+        <meta property="og:description" content="Discover Abhidh Group, the parent company of Abhidh Academy and Abhidh Creative. Learn about our mission, vision, and values as we empower individuals with skills and help businesses grow digitally." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Abhidh Group | Building Skills & Digital Growth Together" />
+        <meta name="twitter:description" content="Discover Abhidh Group, the parent company of Abhidh Academy and Abhidh Creative. Learn about our mission, vision, and values as we empower individuals with skills and help businesses grow digitally." />
       </Helmet>
       <Navigation />
       <main>

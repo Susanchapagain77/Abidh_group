@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import academyImage from "@/assets/academy-image.jpg";
 import abhidhGroupLogo from "@/assets/Abhidh Group Logo.png";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const Academy = () => {
   const programs = [
@@ -98,6 +99,17 @@ const Academy = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Abhidh Academy | Professional Training & Skill Development in Nepal</title>
+        <meta name="description" content="Abhidh Academy offers training for students, professionals, and corporates in soft skills, leadership, communication, digital marketing, AI, IT, Excel, accounting, and more. Bridge the gap between education and employability." />
+        <meta name="keywords" content="Abhidh Academy, training Nepal, soft skills training, digital marketing course Nepal, AI training Nepal, professional development, corporate training, skill development Nepal" />
+        <meta property="og:title" content="Abhidh Academy | Professional Training & Skill Development in Nepal" />
+        <meta property="og:description" content="Abhidh Academy offers training for students, professionals, and corporates in soft skills, leadership, communication, digital marketing, AI, IT, Excel, accounting, and more. Bridge the gap between education and employability." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Abhidh Academy | Professional Training & Skill Development in Nepal" />
+        <meta name="twitter:description" content="Abhidh Academy offers training for students, professionals, and corporates in soft skills, leadership, communication, digital marketing, AI, IT, Excel, accounting, and more. Bridge the gap between education and employability." />
+      </Helmet>
       <Navigation />
       <main>
         {/* Hero Section */}

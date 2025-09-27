@@ -34,8 +34,15 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Contact Us | ABHIDH Group</title>
-        <meta name="description" content="Ready to start your journey with ABHIDH Group? Get in touch with us today and let's discuss how we can help you achieve your goals." />
+        <title>Contact Abhidh Group | Training & Digital Solutions in Nepal</title>
+        <meta name="description" content="Get in touch with Abhidh Group, Abhidh Academy, and Abhidh Creative. Whether you need professional training or digital marketing and IT solutions, we're here to help you grow." />
+        <meta name="keywords" content="contact Abhidh Group, Abhidh Academy contact, Abhidh Creative contact, training inquiry Nepal, digital marketing consultation Nepal, IT solutions inquiry" />
+        <meta property="og:title" content="Contact Abhidh Group | Training & Digital Solutions in Nepal" />
+        <meta property="og:description" content="Get in touch with Abhidh Group, Abhidh Academy, and Abhidh Creative. Whether you need professional training or digital marketing and IT solutions, we're here to help you grow." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Abhidh Group | Training & Digital Solutions in Nepal" />
+        <meta name="twitter:description" content="Get in touch with Abhidh Group, Abhidh Academy, and Abhidh Creative. Whether you need professional training or digital marketing and IT solutions, we're here to help you grow." />
       </Helmet>
       <Navigation />
       <main>
